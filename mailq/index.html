@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mailq</title>
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="logo.png" alt="">
+      <div>
+        <h1>mailq</h1>
+        <p class="tagline">Query an IMAP mailbox from the command line.</p>
+      </div>
+    </header>
+
+    <p>
+      mailq is a small personal command-line tool for searching and reading my own email.
+      It runs entirely on my own computer and talks directly to the mail server over IMAP.
+      There is no mailq server and no web service.
+    </p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li>Searches a mailbox by sender, recipient, subject, text, date and unread status.</li>
+      <li>Lists folders and prints individual messages as plain text.</li>
+      <li>Opens folders read-only, so nothing is marked as read, moved or deleted.</li>
+    </ul>
+
+    <pre><code>mailq search --from alice --since 2026-11-01
+mailq show 4821</code></pre>
+
+    <h2>Google sign-in</h2>
+    <p>
+      For Gmail accounts, mailq can sign in with Google (OAuth 2.0) instead of a password.
+      It requests the <code>https://mail.google.com/</code> scope, which is required for IMAP access,
+      plus <code>openid</code> and <code>email</code> to confirm which account signed in.
+      The resulting token is stored only in the operating system's keyring on the computer running mailq.
+    </p>
+
+    <p><a href="privacy.html">Privacy policy</a></p>
+
+    <footer>mailq is a personal project by <a href="https://github.com/yoogikov">yoogikov</a>.</footer>
+  </main>
+</body>
+</html>
